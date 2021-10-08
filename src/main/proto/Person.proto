@@ -1,0 +1,16 @@
+//使用版本
+syntax = "proto2";
+
+package example;
+
+option java_package = "com.example.dto";
+// 生成的java bean 名字
+option java_outer_classname = "PersonBean";
+
+message Person {
+  required string name = 1;
+  required int64 age = 2;
+  required bool gender = 3;
+}
+// 在src/main目录下进行编译 protoc --java_out=java/ ./proto/Person.proto
+// https://developers.google.com/protocol-buffers/docs/javatutorial#compiling-your-protocol-buffers
